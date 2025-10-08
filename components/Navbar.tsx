@@ -4,7 +4,7 @@ import { navbarConfig, navlinksData } from "@/data/data"
 import { NavLinks } from "@/types/types"
 
 
-const Navar = () => {
+const Navbar = () => {
     return (
         <nav>
             <div>
@@ -31,9 +31,8 @@ const Navar = () => {
                     </div>
                 </div>
             </div>
-
         </nav>
     )
 }
 
-export default Navar
+export default Navbar
