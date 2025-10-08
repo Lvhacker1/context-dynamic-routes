@@ -1,6 +1,6 @@
 import {  NavbarConfig, NavLinks } from "@/types/types";
 
-export const navlinkData: NavLinks[] = [
+export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
     {href: '/categories', label: 'CA'},
     {href: '/profile', label: 'PR'}
