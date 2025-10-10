@@ -25,4 +25,5 @@ export interface LoginFormTypes {
     password: string;
     submitButton: string;
     errorMessage: string;
+    exampleAccountTitle: string;
 }

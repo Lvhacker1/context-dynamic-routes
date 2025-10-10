@@ -1,4 +1,4 @@
-import {  NavbarConfig, NavLinks } from "@/types/types";
+import {  LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -10,4 +10,14 @@ export const navbarConfig: NavbarConfig = {
     title: 'MealDB',
     welcomeText: 'Welcome',
     logoutButton: 'Log Out'
+}
+
+export const loginFormData: LoginFormTypes = {
+    pageTitle: 'MealDB',
+    subTitle: 'Save Your Favorite Recipies',
+    email: 'Email',
+    password: 'Password',
+    submitButton: 'Log In',
+    errorMessage: 'blablabla',
+    exampleAccountTitle: 'Example Account'
 }
