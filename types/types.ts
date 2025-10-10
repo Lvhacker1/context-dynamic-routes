@@ -17,3 +17,12 @@ export interface Users {
     savedMeals: string[];
     favoriteCategory: string | null;
 }
+
+export interface LoginFormTypes {
+    pageTitle: string;
+    subTitle: string;
+    email: string;
+    password: string;
+    submitButton: string;
+    errorMessage: string;
+}
