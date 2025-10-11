@@ -1,3 +1,4 @@
+'use client'
 import { Users } from "@/types/types";
 import { createContext, ReactNode, useContext, useState } from "react";
 
