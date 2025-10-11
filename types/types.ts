@@ -27,3 +27,8 @@ export interface LoginFormTypes {
     errorMessage: string;
     exampleAccountTitle: string;
 }
+
+export interface ExampleAccount {
+    email: string;
+    password: string;
+}
