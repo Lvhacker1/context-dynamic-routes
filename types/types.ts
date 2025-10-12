@@ -55,3 +55,13 @@ export interface Meal {
   strMealThumb: string;
   strYoutube?: string;
 }
+
+export interface HomePageContent {
+    title: string;
+    subTitle: string;
+    links: {
+        href: string;
+        description: string;
+    }[];
+    favoriteCategory?: string;
+}
