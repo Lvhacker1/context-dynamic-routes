@@ -39,3 +39,9 @@ export interface Category {
     strCategoryThumb: string;
     strCategoryDescription: string;
 }
+
+export interface MealPreview {
+    idMeal: string;
+    strMeal: string;
+    strMealThumb: string;
+}
