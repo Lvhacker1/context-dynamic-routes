@@ -32,3 +32,10 @@ export interface ExampleAccount {
     email: string;
     password: string;
 }
+
+export interface Category {
+    idCategory: string;
+    strCategory: string;
+    strCategoryThumb: string;
+    strCategoryDescription: string;
+}
