@@ -1,4 +1,4 @@
-import {  LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
+import {  HomePageContent, LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -20,4 +20,19 @@ export const loginFormData: LoginFormTypes = {
     submitButton: 'Log In',
     errorMessage: 'blablabla',
     exampleAccountTitle: 'Example Account'
+}
+
+export const homePageContent: HomePageContent = {
+    title: 'blabla',
+    subTitle: 'Discover new recepies',
+    links: [
+        {
+            href: '/categories',
+            description: 'blablab'
+        },
+        {
+            href: '/profile',
+            description: 'blablabaaa'
+        },
+    ]
 }
