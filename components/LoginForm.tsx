@@ -24,7 +24,7 @@ const LoginForm = () => {
             <div>
                 <h2>{loginFormData.pageTitle}</h2>
                 <p>{loginFormData.subTitle}</p>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label>{loginFormData.email}</label>
                         <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
