@@ -65,3 +65,10 @@ export interface HomePageContent {
     }[];
     favoriteCategory?: string;
 }
+
+export interface CategoriesPageContent {
+    title: string;
+    loading: string;
+    favorite: string;
+    setFavorite: string;
+}
