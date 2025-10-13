@@ -65,3 +65,16 @@ export interface HomePageContent {
     }[];
     favoriteCategory?: string;
 }
+
+export interface ProfilePageContent {
+    profileInfo: {
+        savedRecipes: string;
+        favoriteCategory: string;
+    },
+    sections: {
+        mySavedRecipes: string;
+        loading: string;
+        noSaved: string;
+        exploreRecipes: string;
+    }
+}
