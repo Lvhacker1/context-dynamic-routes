@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-
 const CategoriesPage = () => {
     const {user, setFavoriteCategory}= useUser();
     const [categories, setCategories] = useState<Category[]>([]);
@@ -19,7 +18,6 @@ const CategoriesPage = () => {
 
     if (!user) return null;
     if (loading) return <div><Navbar/><p>Loading...</p></div>
-
 
     return (
         <div>
