@@ -21,11 +21,11 @@ const CategoriesPage = () => {
     if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
 
     return (
-        <div>
+        <div className="min-h-screen">
             <Navbar />
-            <main>
+            <main className="p-8">
                 <h2>{categoriesPageContent.title}</h2>
-                <div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {categories.map(c => (
                         <div key={c.idCategory}>
                             <Link href={`/categories/${c.strCategory}`}>
