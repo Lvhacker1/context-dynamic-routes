@@ -1,6 +1,7 @@
 'use client'
 import Navbar from "@/components/Navbar"
 import { useUser } from "@/context/UserContext"
+import { categoriesPageContent } from "@/data/data";
 import { getCategories } from "@/lib/api";
 import { Category } from "@/types/types";
 import Image from "next/image";
@@ -17,13 +18,13 @@ const CategoriesPage = () => {
     }, []);
 
     if (!user) return null;
-    if (loading) return <div><Navbar/><p>Loading...</p></div>
+    if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
 
     return (
         <div>
             <Navbar />
             <main>
-                <h2></h2>
+                <h2>{categoriesPageContent.title}</h2>
                 <div>
                     {categories.map(c => (
                         <div key={c.idCategory}>
@@ -38,7 +39,7 @@ const CategoriesPage = () => {
                             </Link>
                             <div>
                                 <button onClick={() => setFavoriteCategory(c.strCategory)}>
-                                    {user.favoriteCategory === c.strCategory ? 'Fvaorite' : 'Set as Favorite'}
+                                    {user.favoriteCategory === c.strCategory ? categoriesPageContent.favorite : categoriesPageContent.setFavorite}
                                 </button>
                             </div>
                         </div>
