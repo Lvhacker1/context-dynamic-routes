@@ -1,4 +1,4 @@
-import {  HomePageContent, LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
+import {  CategoriesPageContent, HomePageContent, LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -38,3 +38,9 @@ export const homePageContent: HomePageContent = {
     ]
 }
 
+export const categoriesPageContent: CategoriesPageContent = {
+    title: 'Food Categories',
+    loading: 'Loading...',
+    favorite: 'Favorite',
+    setFavorite: 'Set as Favorite'
+}
