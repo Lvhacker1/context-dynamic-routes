@@ -1,6 +1,7 @@
 'use client'
 import Navbar from "@/components/Navbar"
 import { useUser } from "@/context/UserContext";
+import { categoryPageContent } from "@/data/data";
 import { getMealsByCategory } from "@/lib/api";
 import { MealPreview } from "@/types/types";
 import Image from "next/image";
@@ -24,13 +25,13 @@ const CategoryPage = () => {
     }, [categoryName])
 
     if (!user) return null;
-    if (loading) return <div><Navbar /> <p>Loading...</p></div>
+    if (loading) return <div><Navbar /> <p>{categoryPageContent.loading}</p></div>
     return (
         <div>
             <Navbar />
             <main>
                 <div>
-                    <Link href='/categories'>Back to categories</Link>
+                    <Link href='/categories'>{categoryPageContent.linkText}</Link>
                     <h1>{categoryName}</h1>
                     <div>
                         {meals.map(meal => (
