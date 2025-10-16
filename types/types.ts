@@ -72,3 +72,8 @@ export interface CategoriesPageContent {
     favorite: string;
     setFavorite: string;
 }
+
+export interface CategoryPageContent {
+    linkText: string;
+    loading: string;
+}
