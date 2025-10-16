@@ -29,7 +29,7 @@ export const getMealsById = async (id: string): Promise<Meal | null> => {
     try {
         const response = await fetch(`${API_URL_BASE}/lookup.php?i=${id}`);
         const data = await response.json();
-        return data.meaals ? data.meaals[0]: null;
+        return data.meals ? data.meals[0]: null;
     } catch (error) {
         console.error('Error:', error)
         return null;
