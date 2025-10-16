@@ -54,6 +54,8 @@ export interface Meal {
   strInstructions: string;
   strMealThumb: string;
   strYoutube?: string;
+  [key: `strIngredient${number}`]: string | undefined;
+  [key: `strMeasure${number}`]: string | undefined;
 }
 
 export interface HomePageContent {
