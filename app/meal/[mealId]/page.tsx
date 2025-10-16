@@ -25,6 +25,13 @@ const MealPage = () => {
     if (loading) return <div><Navbar /> <p>Loading...</p></div>
     if (!meal) return <div><Navbar /> <p>Recipe not found</p></div>
 
+    const ingredients= [];
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = meal[`strIngredient${i}`];
+        const measure = meal[`strMeasure${i}`];
+        if (ingredient && ingredient.trim()) ingredients.push(`${ingredient} ${measure}`)
+    }
+
     return (
         <div>
             <Navbar />
