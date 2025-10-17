@@ -51,6 +51,8 @@ export const categoryPageContent: CategoryPageContent = {
 }
 
 export const mealPageContent: MealPageContent = {
+    loadingMessage: 'Loading...',
+    notFoundMessage: 'Recipe Not Found',
     backButton: 'Back',
     deleteButton: 'Remove',
     saveButton: 'Save',

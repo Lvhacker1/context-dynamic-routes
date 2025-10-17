@@ -81,6 +81,8 @@ export interface CategoryPageContent {
 }
 
 export interface MealPageContent {
+    loadingMessage: string;
+    notFoundMessage: string;
     backButton: string;
     deleteButton: string;
     saveButton: string;
