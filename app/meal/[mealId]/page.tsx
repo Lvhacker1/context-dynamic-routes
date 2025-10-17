@@ -41,8 +41,36 @@ const MealPage = () => {
                     <div>
                         <Image src={meal.strMealThumb} alt={meal.strMeal} width={200} height={100} />
                     </div>
+                    <div>
+                        <div>
+                            <h1>{meal.strMeal}</h1>
+                            <div>
+                                <span>{meal.strCategory}</span>
+                                <span>{meal.strArea}</span>
+                            </div>
+                        </div>
+                        <button onClick={() => saved ? removeSavedMeals(mealId) : addSavedMeals(mealId)}>
+                            {saved ? 'Remove' : 'Save'}
+                        </button>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Ingredients</h2>
+                            <ul>
+                                {ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Instructions</h3>
+                            <p>{meal.strInstructions}</p>
+                            {meal.strYoutube && (
+                                <a href={meal.strYoutube} target="_blank">
+                                    Watch On Youtubeeeeeetizi
+                                </a>
+                            )}
+                        </div>
+                    </div>
                 </div>
-
             </main>
         </div>
     )
