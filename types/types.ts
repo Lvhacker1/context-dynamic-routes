@@ -88,5 +88,5 @@ export interface MealPageContent {
     saveButton: string;
     ingredientsTitle: string;
     instructionsTitle: string;
-    youtubeButton: string;
+    youtubeLink: string;
 }

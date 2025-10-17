@@ -1,6 +1,7 @@
 'use client'
 import Navbar from "@/components/Navbar"
 import { useUser } from "@/context/UserContext";
+import { mealPageContent } from "@/data/data";
 import { getMealsById } from "@/lib/api";
 import { Meal } from "@/types/types";
 import Image from "next/image";
@@ -22,8 +23,8 @@ const MealPage = () => {
     }, [mealId]);
 
     if (!user) return null;
-    if (loading) return <div><Navbar /> <p>Loading...</p></div>
-    if (!meal) return <div><Navbar /> <p>Recipe not found</p></div>
+    if (loading) return <div><Navbar /> <p>{mealPageContent.loadingMessage}</p></div>
+    if (!meal) return <div><Navbar /> <p>{mealPageContent.notFoundMessage}</p></div>
 
     const ingredients= [];
     for (let i = 1; i <= 20; i++) {
@@ -36,7 +37,7 @@ const MealPage = () => {
         <div>
             <Navbar />
             <main>
-                <button onClick={() => router.back()}>Back</button>
+                <button onClick={() => router.back()}>{mealPageContent.backButton}</button>
                 <div>
                     <div>
                         <Image src={meal.strMealThumb} alt={meal.strMeal} width={200} height={100} />
@@ -50,22 +51,22 @@ const MealPage = () => {
                             </div>
                         </div>
                         <button onClick={() => saved ? removeSavedMeals(mealId) : addSavedMeals(mealId)}>
-                            {saved ? 'Remove' : 'Save'}
+                            {saved ? mealPageContent.deleteButton : mealPageContent.saveButton}
                         </button>
                     </div>
                     <div>
                         <div>
-                            <h2>Ingredients</h2>
+                            <h2>{mealPageContent.ingredientsTitle}</h2>
                             <ul>
                                 {ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
                             </ul>
                         </div>
                         <div>
-                            <h3>Instructions</h3>
+                            <h3>{mealPageContent.instructionsTitle}</h3>
                             <p>{meal.strInstructions}</p>
                             {meal.strYoutube && (
                                 <a href={meal.strYoutube} target="_blank">
-                                    Watch On Youtubeeeeeetizi
+                                    {mealPageContent.youtubeLink}
                                 </a>
                             )}
                         </div>

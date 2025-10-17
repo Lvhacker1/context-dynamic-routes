@@ -58,5 +58,5 @@ export const mealPageContent: MealPageContent = {
     saveButton: 'Save',
     ingredientsTitle:'Ingredients',
     instructionsTitle: 'Instructions',
-    youtubeButton: 'Watch On Youtube'
+    youtubeLink: 'Watch On Youtube'
 }
