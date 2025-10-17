@@ -1,4 +1,4 @@
-import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginFormTypes, NavbarConfig, NavLinks } from "@/types/types";
+import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginFormTypes, MealPageContent, NavbarConfig, NavLinks } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -48,4 +48,13 @@ export const categoriesPageContent: CategoriesPageContent = {
 export const categoryPageContent: CategoryPageContent = {
     linkText: 'Back to Categories',
     loading: 'Loading...'
+}
+
+export const mealPageContent: MealPageContent = {
+    backButton: 'Back',
+    deleteButton: 'Remove',
+    saveButton: 'Save',
+    ingredientsTitle:'Ingredients',
+    instructionsTitle: 'Instructions',
+    youtubeButton: 'Watch On Youtube'
 }
