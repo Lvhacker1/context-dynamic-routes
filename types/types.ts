@@ -79,3 +79,12 @@ export interface CategoryPageContent {
     linkText: string;
     loading: string;
 }
+
+export interface MealPageContent {
+    backButton: string;
+    deleteButton: string;
+    saveButton: string;
+    ingredientsTitle: string;
+    instructionsTitle: string;
+    youtubeButton: string;
+}
