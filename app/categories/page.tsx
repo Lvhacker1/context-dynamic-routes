@@ -1,0 +1,53 @@
+'use client'
+import Navbar from "@/components/Navbar"
+import { useUser } from "@/context/UserContext"
+import { categoriesPageContent } from "@/data/data";
+import { getCategories } from "@/lib/api";
+import { Category } from "@/types/types";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const CategoriesPage = () => {
+    const {user, setFavoriteCategory}= useUser();
+    const [categories, setCategories] = useState<Category[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        getCategories().then(data => {setCategories(data); setLoading(false); });
+    }, []);
+
+    if (!user) return null;
+    if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
+
+    return (
+        <div className="min-h-screen">
+            <Navbar />
+            <main className="p-8">
+                <h2>{categoriesPageContent.title}</h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {categories.map(c => (
+                        <div key={c.idCategory}>
+                            <Link href={`/categories/${c.strCategory}`}>
+                            <div>
+                                <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} />
+                            </div>
+                            <div>
+                                <h3>{c.strCategory}</h3>
+                                <p>{c.strCategoryDescription}</p>
+                            </div>
+                            </Link>
+                            <div>
+                                <button onClick={() => setFavoriteCategory(c.strCategory)}>
+                                    {user.favoriteCategory === c.strCategory ? categoriesPageContent.favorite : categoriesPageContent.setFavorite}
+                                </button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </main>
+        </div>
+    )
+}
+
+export default CategoriesPage

@@ -54,6 +54,8 @@ export interface Meal {
   strInstructions: string;
   strMealThumb: string;
   strYoutube?: string;
+  [key: `strIngredient${number}`]: string | undefined;
+  [key: `strMeasure${number}`]: string | undefined;
 }
 
 export interface HomePageContent {
@@ -77,4 +79,27 @@ export interface ProfilePageContent {
         noSaved: string;
         exploreRecipes: string;
     }
+}
+
+export interface CategoriesPageContent {
+    title: string;
+    loading: string;
+    favorite: string;
+    setFavorite: string;
+}
+
+export interface CategoryPageContent {
+    linkText: string;
+    loading: string;
+}
+
+export interface MealPageContent {
+    loadingMessage: string;
+    notFoundMessage: string;
+    backButton: string;
+    deleteButton: string;
+    saveButton: string;
+    ingredientsTitle: string;
+    instructionsTitle: string;
+    youtubeLink: string;
 }

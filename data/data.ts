@@ -1,4 +1,4 @@
-import {  HomePageContent, LoginFormTypes, NavbarConfig, NavLinks, ProfilePageContent } from "@/types/types";
+import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginFormTypes, MealPageContent, NavbarConfig, NavLinks, ProfilePageContent } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -49,4 +49,27 @@ export const profilePageContent: ProfilePageContent = {
         noSaved: 'no saved yet',
         exploreRecipes: 'explore blabla'
     }
+}
+
+export const categoriesPageContent: CategoriesPageContent = {
+    title: 'Food Categories',
+    loading: 'Loading...',
+    favorite: 'Favorite',
+    setFavorite: 'Set as Favorite'
+}
+
+export const categoryPageContent: CategoryPageContent = {
+    linkText: 'Back to Categories',
+    loading: 'Loading...'
+}
+
+export const mealPageContent: MealPageContent = {
+    loadingMessage: 'Loading...',
+    notFoundMessage: 'Recipe Not Found',
+    backButton: 'Back',
+    deleteButton: 'Remove',
+    saveButton: 'Save',
+    ingredientsTitle:'Ingredients',
+    instructionsTitle: 'Instructions',
+    youtubeLink: 'Watch On Youtube'
 }
