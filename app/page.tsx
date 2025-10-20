@@ -12,23 +12,27 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <main>
-        <h1>{homePageContent.title} {user.name}</h1>
-        <p>{homePageContent.subTitle}</p>
+      <main className="flex flex-col justify-center min-h-screen w-full bg-center sm:bg-top bg-no-repeat bg-cover "
+            style={{backgroundImage: 'url(/rec6.png)'}}
+      >
         <div>
-          {homePageContent.links.map((link) => (
-            <Link
-            key={link.href}
-            href={link.href}>
-              <p>{link.description}</p>
-            </Link>
-          ))}
-        </div>
-        {user.favoriteCategory && (
+          <h1 className="text-2xl text-center">{homePageContent.title} {user.name}</h1>
+          <p>{homePageContent.subTitle}</p>
           <div>
-            <p>{homePageContent.favoriteCategory} <strong>{user.favoriteCategory}</strong></p>
+            {homePageContent.links.map((link) => (
+              <Link 
+              key={link.href}
+              href={link.href}>
+                <p>{link.description} <span className="ml-2">➜</span></p>
+              </Link>
+            ))}
           </div>
-        )}
+          {user.favoriteCategory && (
+            <div>
+              <p>{homePageContent.favoriteCategory} <strong>{user.favoriteCategory}</strong></p>
+            </div>
+          )}
+        </div>
       </main>
     </div>
   );

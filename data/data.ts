@@ -23,17 +23,17 @@ export const loginFormData: LoginFormTypes = {
 }
 
 export const homePageContent: HomePageContent = {
-    title: 'blabla',
-    subTitle: 'Discover new recepies',
-    favoriteCategory: 'balbajsjnslks fav cat',
+    title: 'Welcome back ',
+    subTitle: 'Find and save your favorite recepies',
+    favoriteCategory: 'Your favorite categories:',
     links: [
         {
             href: '/categories',
-            description: 'blablab'
+            description: 'Recipes'
         },
         {
             href: '/profile',
-            description: 'blablabaaa'
+            description: 'Account'
         },
     ]
 }
