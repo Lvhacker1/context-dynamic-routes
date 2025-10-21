@@ -17,7 +17,7 @@ export default function Home() {
       >
         <div className="flex flex-col gap-2 mx-auto px-6 py-10" style={{backgroundImage: 'url(/note4.png)'}}>
           <h1 className="text-2xl text-center">{homePageContent.title} {user.name}</h1>
-          <p>{homePageContent.subTitle}</p>
+          <p className="text-center">{homePageContent.subTitle}</p>
           <div className="flex gap-2 mt-4 justify-center">
             {homePageContent.links.map((link) => (
               <Link className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-1 px-4 rounded transition-colors duration-200"
