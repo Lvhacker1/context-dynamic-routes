@@ -7,19 +7,21 @@ export const navlinksData: NavLinks[] = [
 ]
 
 export const navbarConfig: NavbarConfig = {
-    title: 'MealDB',
+    title: 'MEALDB',
     welcomeText: 'Welcome',
     logoutButton: 'Log Out'
 }
 
 export const loginFormData: LoginFormTypes = {
-    pageTitle: 'MealDB',
-    subTitle: 'Save Your Favorite Recipies',
-    email: 'Email Adress',
-    password: 'Password',
+    pageTitle: 'MEALDB',
+    subTitle: 'Log In and Let Your Recipes Come to Life',
+    email: 'Email Adress:',
+    password: 'Password:',
     submitButton: 'SIGN IN',
     errorMessage: 'blablabla',
-    exampleAccountTitle: 'Example Account'
+    exampleAccountTitle: 'Example Account',
+    signUpText: "Don't have an account?",
+    signUpLink: 'Sign up here!'
 }
 
 export const homePageContent: HomePageContent = {

@@ -26,6 +26,8 @@ export interface LoginFormTypes {
     submitButton: string;
     errorMessage: string;
     exampleAccountTitle: string;
+    signUpText: string;
+    signUpLink: string;
 }
 
 export interface ExampleAccount {
