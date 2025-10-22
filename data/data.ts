@@ -15,9 +15,9 @@ export const navbarConfig: NavbarConfig = {
 export const loginFormData: LoginFormTypes = {
     pageTitle: 'MealDB',
     subTitle: 'Save Your Favorite Recipies',
-    email: 'Email',
+    email: 'Email Adress',
     password: 'Password',
-    submitButton: 'Log In',
+    submitButton: 'SIGN IN',
     errorMessage: 'blablabla',
     exampleAccountTitle: 'Example Account'
 }

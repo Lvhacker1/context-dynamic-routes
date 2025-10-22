@@ -20,22 +20,24 @@ const LoginForm = () => {
 
 
     return (
-        <div>
-            <div>
-                <h2>{loginFormData.pageTitle}</h2>
-                <p>{loginFormData.subTitle}</p>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <label>{loginFormData.email}</label>
-                        <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
+        <div className="flex flex-col h-screen justify-center items-center text-gray-600">
+            <div className="flex flex-col gap-2 justify-center items-center">
+                <h1>{loginFormData.pageTitle}</h1>
+                <div className="flex justify-center items-center">
+                <form onSubmit={handleSubmit} className="flex flex-col mx-auto gap-4 bg-gray-100 p-5 rounded-xs">
+                    <p>{loginFormData.subTitle}</p>
+                    <div className="border-b-2 flex flex-col">
+                        <label htmlFor="email" >{loginFormData.email}</label>
+                        <input className="focus:outline-none" type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} required />
                     </div>
-                    <div>
-                        <label>{loginFormData.password}</label>
-                        <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
+                    <div className="border-b-2 flex flex-col">
+                        <label htmlFor="password">{loginFormData.password}</label>
+                        <input className="focus:outline-none" type="password" id="password" value={password} onChange={e => setPassword(e.target.value)} required />
                     </div>
                     {error && <p>{error}</p>}
                     <button type="submit">{loginFormData.submitButton}</button>
                 </form>
+                </div>
             </div>
         </div>
     )
