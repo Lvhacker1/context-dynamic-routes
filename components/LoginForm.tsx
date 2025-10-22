@@ -41,7 +41,7 @@ const LoginForm = () => {
                 </div>
                 <div className="flex gap-2">
                     <p>{loginFormData.signUpText}</p>
-                    <a className="underline hover:text-blue-500 cursor-pointer">{loginFormData.signUpLink}</a>
+                    <a href="/" className="underline hover:text-blue-500 cursor-pointer">{loginFormData.signUpLink}</a>
                 </div>
             </div>
         </div>
