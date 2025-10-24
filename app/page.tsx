@@ -3,6 +3,7 @@ import LoginForm from "@/components/LoginForm";
 import Navbar from "@/components/Navbar";
 import { useUser } from "@/context/UserContext";
 import { homePageContent } from "@/data/data";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -26,8 +27,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
-          <div>
-
+          <div className="w-full h-100 relative md:w-1/2 md:h.screen"> 
+            <Image 
+              src="/food55.png"
+              alt="food image"
+              fill
+              />
           </div>
         </div>
       </main>
