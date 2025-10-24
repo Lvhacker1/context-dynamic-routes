@@ -67,7 +67,7 @@ export interface HomePageContent {
         href: string;
         description: string;
     }[];
-    favoriteCategory?: string;
+    linkText: string;
 }
 
 export interface ProfilePageContent {

@@ -27,7 +27,7 @@ export const loginFormData: LoginFormTypes = {
 export const homePageContent: HomePageContent = {
     title: 'Welcome back ',
     subTitle: 'Find and save your favorite recepies',
-    favoriteCategory: 'Your favorite categories:',
+    linkText: 'Quick Links:',
     links: [
         {
             href: '/categories',
