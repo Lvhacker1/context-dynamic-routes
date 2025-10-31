@@ -14,6 +14,7 @@ const CategoriesPage = () => {
     const [loading, setLoading] = useState(true);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([])
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [showFullDescription, setShowFullDescription] = useState<{[key: string]: boolean}>({})
 
 
     useEffect(() => {
@@ -34,6 +35,13 @@ const CategoriesPage = () => {
         card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" })
         }
     }
+
+    const toggleDescription = (categoryId: string) => {
+        setShowFullDescription(prev => ({
+            ...prev,
+            [categoryId]: !prev[categoryId],
+        }));
+    };
 
     if (!user) return null;
     if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
@@ -63,13 +71,27 @@ const CategoriesPage = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-semibold mb-2">{c.strCategory}</h3>
-                                    <p className="text-sm text-gray-600 line-clamp-4">{c.strCategoryDescription}</p>
                                 </div>
                                 </Link>
+                                <div>
+                                    <p className={`text-sm text-gray-600 ${showFullDescription[c.idCategory] ? '' : 'line-clamp-2'}`}>
+                                        {c.strCategoryDescription}
+                                    </p>
+                                    {c.strCategoryDescription && c.strCategoryDescription.length > 100 && (
+                                        <button
+                                            onClick={() => toggleDescription(c.idCategory)}
+                                            className="text-blue-600 hover:text-blue-800 text-sm mt-1 underline">
+                                            {showFullDescription[c.idCategory] ? 'Read less' : 'Read more'}
+                                        </button>
+                                    )}
+                                </div>
                                 <div className="mt-4 ">
-                                    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 md:text-lg" 
-                                    onClick={() => setFavoriteCategory(c.strCategory)}>
-                                        {user.favoriteCategory === c.strCategory ? categoriesPageContent.favorite : categoriesPageContent.setFavorite}
+                                    <button 
+                                        className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
+                                            user.favoriteCategory === c.strCategory ? 'text-yellow-300' : 'text-gray-400'}`}
+                                        onClick={() => setFavoriteCategory(c.strCategory)}
+                                        aria-label={user.favoriteCategory === c.strCategory ? "Remove from favorites" : "Add to favorites"}>
+                                        {user.favoriteCategory === c.strCategory ? '★' : '☆'}
                                     </button>
                                 </div>
                             </div>
