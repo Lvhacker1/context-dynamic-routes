@@ -12,7 +12,7 @@ const CategoriesPage = () => {
     const {user, setFavoriteCategory}= useUser();
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(true);
-    const cardRefs = useRef<HTMLDivElement[]>([]);
+    const cardRefs = useRef<(HTMLDivElement | null)[]>([])
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
@@ -30,8 +30,10 @@ const CategoriesPage = () => {
         setCurrentIndex(newIndex);
 
         const card = cardRefs.current[newIndex];
-        card?.scrollIntoView({behavior: 'smooth', inline: 'start' });
-    };
+        if (card) {
+        card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" })
+        }
+    }
 
     if (!user) return null;
     if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
@@ -39,28 +41,34 @@ const CategoriesPage = () => {
     return (
         <div className="min-h-screen">
             <Navbar />
-            <main className="p-8">
-                <h2>{categoriesPageContent.title}</h2>
-                <div>
+            <main className="p-4 sm:p-8">
+                <h2 className="text-center text-xl sm:text-2xl lg:text-4xl font-semibold mb-6">{categoriesPageContent.title}</h2>
+                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto">
                     <button 
                         onClick={() => scrollCategories('left')}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors">
+                        disabled={currentIndex === 0}
+                        className="absolute -left-10 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
                         <p>{"<"}</p>
                     </button>
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {categories.map(c => (
-                            <div key={c.idCategory}>
+                    <div className="flex overflow-x-hidden w-full">
+                        {categories.map((c, i) => (
+                            <div className="flex-shrink-0 w-full border rounded p-4 sm:p-6 shadow-sm flex flex-col items-center text-center"
+                                key={c.idCategory}
+                                ref={el => {
+                                    cardRefs.current[i] = el!
+                                }}>
                                 <Link href={`/categories/${c.strCategory}`}>
-                                <div>
-                                    <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} />
+                                <div className="flex justify-center mb-4 w-full">
+                                    <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} className="rounded object-cover w-full h-auto max-w-md" />
                                 </div>
                                 <div>
-                                    <h3>{c.strCategory}</h3>
-                                    <p>{c.strCategoryDescription}</p>
+                                    <h3 className="text-lg font-semibold mb-2">{c.strCategory}</h3>
+                                    <p className="text-sm text-gray-600 line-clamp-4">{c.strCategoryDescription}</p>
                                 </div>
                                 </Link>
-                                <div>
-                                    <button onClick={() => setFavoriteCategory(c.strCategory)}>
+                                <div className="mt-4">
+                                    <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 md:text-lg" 
+                                    onClick={() => setFavoriteCategory(c.strCategory)}>
                                         {user.favoriteCategory === c.strCategory ? categoriesPageContent.favorite : categoriesPageContent.setFavorite}
                                     </button>
                                 </div>
@@ -69,9 +77,20 @@ const CategoriesPage = () => {
                     </div>
                     <button 
                         onClick={() => scrollCategories('right')}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors">
+                        disabled={currentIndex === categories.length - 1}
+                        className="absolute -right-10 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
                         <p>{">"}</p>
                     </button>
+                </div>
+                <div className="flex justify-center mt-6 gap-2">
+                    {categories.map((_, i) => (
+                        <span
+                        key={i}
+                        className={`h-2 w-2 rounded-full ${
+                            i === currentIndex ? "bg-blue-500" : "bg-gray-300"
+                        }`}
+                        ></span>
+                    ))}
                 </div>
             </main>
         </div>
