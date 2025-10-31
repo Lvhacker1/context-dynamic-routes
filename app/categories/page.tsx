@@ -39,25 +39,25 @@ const CategoriesPage = () => {
     if (loading) return <div><Navbar/><p>{categoriesPageContent.loading}</p></div>
 
     return (
-        <div className="min-h-screen">
+        <div className="min-h-screen overflow-x-hidden">
             <Navbar />
-            <main className="p-4 sm:p-8">
+            <main className="p-2 overflow-x-hidden">
                 <h2 className="text-center text-xl sm:text-2xl lg:text-4xl font-semibold mb-6">{categoriesPageContent.title}</h2>
-                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto">
+                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto overflow-hidden px-8">
                     <button 
                         onClick={() => scrollCategories('left')}
                         disabled={currentIndex === 0}
-                        className="absolute -left-10 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
+                        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
                         <p>{"<"}</p>
                     </button>
-                    <div className="flex overflow-x-hidden w-full">
+                    <div className="flex overflow-x-hidden w-full snap-x snap-mandatory">
                         {categories.map((c, i) => (
-                            <div className="flex-shrink-0 w-full border rounded p-4 sm:p-6 shadow-sm flex flex-col items-center text-center"
+                            <div className="flex-shrink-0 w-full border rounded snap-center p-4 sm:p-6 shadow-sm flex flex-col items-center text-center justify-between"
                                 key={c.idCategory}
                                 ref={el => {
                                     cardRefs.current[i] = el!
                                 }}>
-                                <Link href={`/categories/${c.strCategory}`}>
+                                <Link href={`/categories/${c.strCategory}`} className="w-full">
                                 <div className="flex justify-center mb-4 w-full">
                                     <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} className="rounded object-cover w-full h-auto max-w-md" />
                                 </div>
@@ -66,7 +66,7 @@ const CategoriesPage = () => {
                                     <p className="text-sm text-gray-600 line-clamp-4">{c.strCategoryDescription}</p>
                                 </div>
                                 </Link>
-                                <div className="mt-4">
+                                <div className="mt-4 ">
                                     <button className="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 md:text-lg" 
                                     onClick={() => setFavoriteCategory(c.strCategory)}>
                                         {user.favoriteCategory === c.strCategory ? categoriesPageContent.favorite : categoriesPageContent.setFavorite}
@@ -78,7 +78,7 @@ const CategoriesPage = () => {
                     <button 
                         onClick={() => scrollCategories('right')}
                         disabled={currentIndex === categories.length - 1}
-                        className="absolute -right-10 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
+                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
                         <p>{">"}</p>
                     </button>
                 </div>
