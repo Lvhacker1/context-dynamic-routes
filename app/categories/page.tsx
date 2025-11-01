@@ -50,7 +50,7 @@ const CategoriesPage = () => {
         <div className="min-h-screen overflow-x-hidden">
             <Navbar />
             <main className="p-2 overflow-x-hidden">
-                <h2 className="text-center text-xl sm:text-2xl lg:text-4xl font-semibold mb-6">{categoriesPageContent.title}</h2>
+                <h1 className="text-center text-xl sm:text-2xl lg:text-4xl font-semibold mb-6">{categoriesPageContent.title}</h1>
                 <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto overflow-hidden px-8">
                     <button 
                         onClick={() => scrollCategories('left')}
