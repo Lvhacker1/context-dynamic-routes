@@ -65,12 +65,19 @@ const CategoriesPage = () => {
                                 ref={el => {
                                     cardRefs.current[i] = el!
                                 }}>
+                                <div className="flex items-center justify-between w-full mb-4">
+                                    <h3 className="text-lg font-semibold mb-2">{c.strCategory}</h3>
+                                    <button 
+                                        className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
+                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-gray-400'}`}
+                                        onClick={() => setFavoriteCategory(c.strCategory)}
+                                        aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
+                                        {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
+                                    </button>
+                                </div>
                                 <Link href={`/categories/${c.strCategory}`} className="w-full">
                                 <div className="flex justify-center mb-4 w-full">
                                     <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} className="rounded object-cover w-full h-auto max-w-md" />
-                                </div>
-                                <div>
-                                    <h3 className="text-lg font-semibold mb-2">{c.strCategory}</h3>
                                 </div>
                                 </Link>
                                 <div>
@@ -84,15 +91,6 @@ const CategoriesPage = () => {
                                             {showFullDescription[c.idCategory] ? 'Read less' : 'Read more'}
                                         </button>
                                     )}
-                                </div>
-                                <div className="mt-4">
-                                    <button 
-                                        className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
-                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-gray-400'}`}
-                                        onClick={() => setFavoriteCategory(c.strCategory)}
-                                        aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
-                                        {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
-                                    </button>
                                 </div>
                             </div>
                         ))}
