@@ -85,13 +85,13 @@ const CategoriesPage = () => {
                                         </button>
                                     )}
                                 </div>
-                                <div className="mt-4 ">
+                                <div className="mt-4">
                                     <button 
                                         className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
-                                            user.favoriteCategory === c.strCategory ? 'text-yellow-300' : 'text-gray-400'}`}
+                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-gray-400'}`}
                                         onClick={() => setFavoriteCategory(c.strCategory)}
-                                        aria-label={user.favoriteCategory === c.strCategory ? "Remove from favorites" : "Add to favorites"}>
-                                        {user.favoriteCategory === c.strCategory ? '★' : '☆'}
+                                        aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
+                                        {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
                                     </button>
                                 </div>
                             </div>
