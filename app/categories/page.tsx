@@ -66,7 +66,7 @@ const CategoriesPage = () => {
                                     cardRefs.current[i] = el!
                                 }}>
                                 <div className="flex items-center justify-between w-full mb-4">
-                                    <h3 className="text-lg font-semibold mb-2">{c.strCategory}</h3>
+                                    <h2 className="text-lg font-semibold mb-2">{c.strCategory}</h2>
                                     <button 
                                         className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
                                             user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-gray-400'}`}
