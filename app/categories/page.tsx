@@ -7,6 +7,7 @@ import { Category } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const CategoriesPage = () => {
     const {user, setFavoriteCategory}= useUser();
@@ -50,13 +51,13 @@ const CategoriesPage = () => {
         <div className="min-h-screen overflow-x-hidden">
             <Navbar />
             <main className="p-2 overflow-x-hidden">
-                <h1 className="text-center text-xl sm:text-2xl lg:text-4xl font-semibold mb-6">{categoriesPageContent.title}</h1>
-                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto overflow-hidden px-8">
+                <h1 className="text-center text-3xl font-bold lg:text-5xl mb-6">{categoriesPageContent.title}</h1>
+                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto overflow-hidden px-10">
                     <button 
                         onClick={() => scrollCategories('left')}
                         disabled={currentIndex === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
-                        <p>{"<"}</p>
+                        className="absolute left-0 top-1/2 -translate-y-1/2 text-white p-2 ransition-colors disabled:cursor-not-allowed disabled:text-gray-400 hover:text-gray-400  transition-colors duration-300 cursor-pointer">
+                        <IoIosArrowBack size={32} />
                     </button>
                     <div className="flex overflow-x-hidden w-full snap-x snap-mandatory">
                         {categories.map((c, i) => (
@@ -66,10 +67,10 @@ const CategoriesPage = () => {
                                     cardRefs.current[i] = el!
                                 }}>
                                 <div className="flex items-center justify-between w-full mb-4">
-                                    <h2 className="text-lg font-semibold mb-2">{c.strCategory}</h2>
+                                    <h2 className="text-2xl lg:text-3xl mb-2">{c.strCategory}</h2>
                                     <button 
                                         className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
-                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-gray-400'}`}
+                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-300' : 'text-white'}`}
                                         onClick={() => setFavoriteCategory(c.strCategory)}
                                         aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
                                         {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
@@ -98,8 +99,8 @@ const CategoriesPage = () => {
                     <button 
                         onClick={() => scrollCategories('right')}
                         disabled={currentIndex === categories.length - 1}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-white text-black p-2 rounded-full shadow-lg hover:bg-gray-200 transition-colors z-10 disabled:opacity-40">
-                        <p>{">"}</p>
+                        className="absolute right-0 top-1/2 -translate-y-1/2 text-white p-2 hover:text-gray-400  transition-colors duration-300 cursor-pointer">
+                        <IoIosArrowForward size={32} />
                     </button>
                 </div>
                 <div className="flex justify-center mt-6 gap-2">
