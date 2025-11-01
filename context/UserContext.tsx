@@ -33,8 +33,17 @@ export function UserProvider({children}: {children: ReactNode}) {
     }
 
     const setFavoriteCategory = (category: string) => {
-        if (user) setUser({...user, favoriteCategory: category})
-    }
+        if (!user) return;
+        
+        const isFavorite = user.favoriteCategories?.includes(category);
+        
+        setUser({
+            ...user,
+            favoriteCategories: isFavorite 
+                ? user.favoriteCategories.filter(c => c !== category)
+                : [...(user.favoriteCategories || []), category]
+        })
+    };
 
     const isMealSaved = (mealId: string) => user?.savedMeals.includes(mealId) || false;
 

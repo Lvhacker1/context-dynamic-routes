@@ -15,7 +15,7 @@ export interface Users {
     email: string;
     password: string;
     savedMeals: string[];
-    favoriteCategory: string | null;
+    favoriteCategories: string[];
 }
 
 export interface LoginFormTypes {

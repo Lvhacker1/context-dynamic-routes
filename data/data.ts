@@ -53,7 +53,7 @@ export const profilePageContent: ProfilePageContent = {
 }
 
 export const categoriesPageContent: CategoriesPageContent = {
-    title: 'Food Categories',
+    title: 'Meal files for your browsing',
     loading: 'Loading...',
     favorite: 'Favorite',
     setFavorite: 'Set as Favorite'
