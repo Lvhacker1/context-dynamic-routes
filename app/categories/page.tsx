@@ -72,6 +72,7 @@ const CategoriesPage = () => {
                     container.style.maskImage = 'none';
                     (container.style as any).webkitMaskImage = 'none';
                     container.scrollLeft = targetScroll;
+                    container.style.scrollSnapType = 'x mandatory';
                 }
             };
             
