@@ -99,7 +99,7 @@ const CategoriesPage = () => {
                     <button 
                         onClick={() => scrollCategories('left')}
                         disabled={currentIndex === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 ransition-colors disabled:cursor-not-allowed disabled:text-gray-500 hover:text-gray-500  transition-colors duration-300 cursor-pointer">
+                        className="absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 disabled:cursor-not-allowed disabled:text-gray-500 hover:text-gray-500  transition-colors duration-300 cursor-pointer">
                         <IoIosArrowBack size={32} />
                     </button>
                     <div className="rounded my-8 w-full" style={{ boxShadow: '0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}>
