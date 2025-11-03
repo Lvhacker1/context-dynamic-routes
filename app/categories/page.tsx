@@ -13,7 +13,6 @@ const CategoriesPage = () => {
     const {user, setFavoriteCategory}= useUser();
     const [categories, setCategories] = useState<Category[]>([]);
     const [loading, setLoading] = useState(true);
-    const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showFullDescription, setShowFullDescription] = useState<{[key: string]: boolean}>({});
     const containerRef = useRef<HTMLDivElement>(null);
@@ -108,9 +107,7 @@ const CategoriesPage = () => {
                             {categories.map((c, i) => (
                                 <div className="flex-shrink-0 w-full snap-center p-4 sm:p-6  flex flex-col items-center text-center justify-between"
                                     key={c.idCategory}
-                                    ref={el => {
-                                        cardRefs.current[i] = el!
-                                    }}>
+                                   >
                                     <div className="flex items-center justify-between w-full mb-4">
                                         <h2 className="text-2xl lg:text-3xl mb-2 text-black font-bold">{c.strCategory}</h2>
                                         <button 
