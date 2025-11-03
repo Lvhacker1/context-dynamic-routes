@@ -36,7 +36,7 @@ const CategoriesPage = () => {
             container.style.scrollSnapType = 'none';
             
             const targetScroll = newIndex * container.offsetWidth;
-            const duration = 2000;
+            const duration = 1200;
             const startTime = performance.now();
             let hasScrolled = false;
             
