@@ -99,10 +99,10 @@ const CategoriesPage = () => {
                     <button 
                         onClick={() => scrollCategories('left')}
                         disabled={currentIndex === 0}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 text-white p-2 ransition-colors disabled:cursor-not-allowed disabled:text-gray-400 hover:text-gray-400  transition-colors duration-300 cursor-pointer">
+                        className="absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 ransition-colors disabled:cursor-not-allowed disabled:text-gray-500 hover:text-gray-500  transition-colors duration-300 cursor-pointer">
                         <IoIosArrowBack size={32} />
                     </button>
-                    <div className="flex overflow-x-scroll w-full snap-x snap-mandatory bg-gray-200 rounded "
+                    <div className="flex overflow-x-scroll w-full snap-x snap-mandatory bg-gray-100 rounded"
                     ref={containerRef}>
                         {categories.map((c, i) => (
                             <div className="flex-shrink-0 w-full snap-center p-4 sm:p-6  flex flex-col items-center text-center justify-between"
@@ -143,7 +143,7 @@ const CategoriesPage = () => {
                     <button 
                         onClick={() => scrollCategories('right')}
                         disabled={currentIndex === categories.length - 1}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 text-white p-2 hover:text-gray-400  transition-colors duration-300 cursor-pointer disabled:cursor-not-allowed disabled:text-gray-400">
+                        className="absolute right-0 top-1/2 -translate-y-1/2 text-black p-2 hover:text-gray-500  transition-colors duration-300 cursor-pointer disabled:cursor-not-allowed disabled:text-gray-500">
                         <IoIosArrowForward size={32} />
                     </button>
                 </div>
