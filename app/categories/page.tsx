@@ -102,43 +102,55 @@ const CategoriesPage = () => {
                         className="absolute left-0 top-1/2 -translate-y-1/2 text-black p-2 ransition-colors disabled:cursor-not-allowed disabled:text-gray-500 hover:text-gray-500  transition-colors duration-300 cursor-pointer">
                         <IoIosArrowBack size={32} />
                     </button>
-                    <div className="flex overflow-x-scroll w-full snap-x snap-mandatory bg-gray-100 rounded"
-                    ref={containerRef}>
-                        {categories.map((c, i) => (
-                            <div className="flex-shrink-0 w-full snap-center p-4 sm:p-6  flex flex-col items-center text-center justify-between"
-                                key={c.idCategory}
-                                ref={el => {
-                                    cardRefs.current[i] = el!
-                                }}>
-                                <div className="flex items-center justify-between w-full mb-4">
-                                    <h2 className="text-2xl lg:text-3xl mb-2 text-black font-bold">{c.strCategory}</h2>
-                                    <button 
-                                        className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
-                                            user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-400' : 'text-black'}`}
-                                        onClick={() => setFavoriteCategory(c.strCategory)}
-                                        aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
-                                        {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
-                                    </button>
-                                </div>
-                                <Link href={`/categories/${c.strCategory}`} className="w-full">
-                                <div className="flex justify-center mb-4 w-full">
-                                    <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} className="rounded object-cover w-full h-auto max-w-md" />
-                                </div>
-                                </Link>
-                                <div>
-                                    <p className={`text-sm text-gray-600 ${showFullDescription[c.idCategory] ? '' : 'line-clamp-2'}`}>
-                                        {c.strCategoryDescription}
-                                    </p>
-                                    {c.strCategoryDescription && c.strCategoryDescription.length > 100 && (
-                                        <button
-                                            onClick={() => toggleDescription(c.idCategory)}
-                                            className="text-blue-600 hover:text-blue-800 text-sm mt-1 underline">
-                                            {showFullDescription[c.idCategory] ? 'Read less' : 'Read more'}
+                    <div className="rounded my-8 w-full" style={{ boxShadow: '0 -10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}>
+                        <div className="flex overflow-x-scroll w-full snap-x snap-mandatory rounded"
+                        ref={containerRef}>
+                            {categories.map((c, i) => (
+                                <div className="flex-shrink-0 w-full snap-center p-4 sm:p-6  flex flex-col items-center text-center justify-between"
+                                    key={c.idCategory}
+                                    ref={el => {
+                                        cardRefs.current[i] = el!
+                                    }}>
+                                    <div className="flex items-center justify-between w-full mb-4">
+                                        <h2 className="text-2xl lg:text-3xl mb-2 text-black font-bold">{c.strCategory}</h2>
+                                        <button 
+                                            className={`text-4xl transition-all duration-300 hover:scale-110 transform ${
+                                                user.favoriteCategories?.includes(c.strCategory) ? 'text-yellow-400' : 'text-black'}`}
+                                            onClick={() => setFavoriteCategory(c.strCategory)}
+                                            aria-label={user.favoriteCategories?.includes(c.strCategory) ? "Remove from favorites" : "Add to favorites"}>
+                                            {user.favoriteCategories?.includes(c.strCategory) ? '★' : '☆'}
                                         </button>
-                                    )}
+                                    </div>
+                                    <Link href={`/categories/${c.strCategory}`} className="w-full">
+                                    <div className="flex justify-center mb-4 w-full">
+                                        <Image src={c.strCategoryThumb} alt={c.strCategory} width={200} height={100} className="rounded object-cover w-full h-auto max-w-md" />
+                                    </div>
+                                    </Link>
+                                    <div>
+                                        <p className={`text-sm text-gray-600 ${showFullDescription[c.idCategory] ? '' : 'line-clamp-2'}`}>
+                                            {c.strCategoryDescription}
+                                        </p>
+                                        {c.strCategoryDescription && c.strCategoryDescription.length > 100 && (
+                                            <button
+                                                onClick={() => toggleDescription(c.idCategory)}
+                                                className="text-blue-600 hover:text-blue-800 text-sm mt-1 underline">
+                                                {showFullDescription[c.idCategory] ? 'Read less' : 'Read more'}
+                                            </button>
+                                        )}
+                                    </div>
+                                    <div className="flex justify-center mt-6 gap-2">
+                                        {categories.map((_, i) => (
+                                            <span
+                                            key={i}
+                                            className={`h-2 w-2 rounded-full ${
+                                                i === currentIndex ? "bg-blue-500" : "bg-gray-300"
+                                            }`}
+                                            ></span>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                     <button 
                         onClick={() => scrollCategories('right')}
@@ -146,16 +158,6 @@ const CategoriesPage = () => {
                         className="absolute right-0 top-1/2 -translate-y-1/2 text-black p-2 hover:text-gray-500  transition-colors duration-300 cursor-pointer disabled:cursor-not-allowed disabled:text-gray-500">
                         <IoIosArrowForward size={32} />
                     </button>
-                </div>
-                <div className="flex justify-center mt-6 gap-2">
-                    {categories.map((_, i) => (
-                        <span
-                        key={i}
-                        className={`h-2 w-2 rounded-full ${
-                            i === currentIndex ? "bg-blue-500" : "bg-gray-300"
-                        }`}
-                        ></span>
-                    ))}
                 </div>
             </main>
         </div>
