@@ -94,7 +94,7 @@ const CategoriesPage = () => {
             <Navbar />
             <main className="p-2 overflow-x-hidden">
                 <h1 className="text-center text-3xl font-bold lg:text-5xl mb-6 text-white">{categoriesPageContent.title}</h1>
-                <div className="relative flex items-center justify-center w-full max-w-2xl mx-auto overflow-hidden px-10">
+                <div className="relative flex items-center justify-center w-full max-w-4xl mx-auto overflow-hidden px-10">
                     <button
                         onClick={() => scrollCategories('left')}
                         disabled={currentIndex === 0}
@@ -124,7 +124,7 @@ const CategoriesPage = () => {
                                     </div>
                                     </Link>
                                     <div>
-                                        <p className={`text-sm text-gray-300 ${showFullDescription[c.idCategory] ? '' : 'line-clamp-2'}`}>
+                                        <p className={`text-base text-gray-300 ${showFullDescription[c.idCategory] ? '' : 'line-clamp-2'}`}>
                                             {c.strCategoryDescription}
                                         </p>
                                         {c.strCategoryDescription && c.strCategoryDescription.length > 100 && (
