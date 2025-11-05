@@ -101,7 +101,7 @@ const CategoriesPage = () => {
                         className="absolute left-0 top-1/2 -translate-y-1/2 text-red-400 p-2 disabled:cursor-not-allowed disabled:text-gray-600 hover:text-red-300 transition-colors duration-300 cursor-pointer">
                         <IoIosArrowBack size={32} />
                     </button>
-                    <div className="rounded my-8 w-full" style={{ boxShadow: '0 -10px 25px -5px rgba(220, 38, 38, 0.2), 0 10px 25px -5px rgba(220, 38, 38, 0.2)' }}>
+                    <div className="rounded my-8 w-full border-2 border-gray-700" style={{ boxShadow: '0 -10px 25px -5px rgba(220, 38, 38, 0.2), 0 10px 25px -5px rgba(220, 38, 38, 0.2)' }}>
                         <div className="flex overflow-x-scroll w-full snap-x snap-mandatory rounded"
                         ref={containerRef}>
                             {categories.map((c, i) => (
