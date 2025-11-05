@@ -47,7 +47,7 @@ const CategoryPage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {meals.map(meal => (
                         <Link key={meal.idMeal} href={`/meal/${meal.idMeal}`} className="group">
-                            <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/20 hover:-translate-y-2 border border-gray-700/50 hover:border-red-500/50">
+                            <div className="bg-gray-800/60 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-red-500/20 hover:-translate-y-2 border-2 border-gray-700/50 hover:border-red-500">
                                 <div className="relative aspect-square overflow-hidden bg-gray-900">
                                     <Image src={meal.strMealThumb} alt={meal.strMeal} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw" className="object-cover group-hover:scale-110 transition-transform duration-500 group-hover:brightness-110" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
