@@ -18,12 +18,12 @@ export default function Home() {
         <div className="flex flex-col justify-center items-start text-left p-4 w-full md:w-1/2 lg:p-16">
           <h1 className="flex items-center gap-4 text-3xl font-bold lg:text-5xl">{homePageContent.title} {user.name} <PiHandWaving size={32} className="w-8 h-8 lg:w-12 lg:h-12" /></h1>
           <p className="text-lg mb-16 mt-2 md:text-xl text-gray-300">{homePageContent.subTitle}</p>
-          <div className="flex flex-wrap gap-4">
-            {homePageContent.links.map((link) => (
-              <Link className="bg-red-600 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded transition-colors duration-300 md:text-lg"
+          <div className="flex flex-wrap gap-2 md:gap-4">
+            {homePageContent.links.map((link, index) => (
+              <Link className={index === 0 ? "bg-red-500 border-2 border-red-500 text-white hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 text-base md:text-lg" : "bg-transparent border-2 border-red-500 text-red-500 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-md shadow-red-500/20 transition-all duration-300 text-base md:text-lg"}
               key={link.href}
               href={link.href}>
-                <p>{link.description} <span className="ml-1">➜</span></p>
+                <p>{link.description}</p>
               </Link>
             ))}
           </div>
