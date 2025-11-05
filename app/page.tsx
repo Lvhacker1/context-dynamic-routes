@@ -12,7 +12,7 @@ export default function Home() {
   if (!user) return <LoginForm />
 
   return (
-    <div>
+    <div className="bg-black">
       <Navbar />
       <main className=" text-white flex flex-col-reverse justify-end items-center min-h-screen md:flex-row md:items-center">
         <div className="flex flex-col justify-center items-start text-left p-4 w-full md:w-1/2 lg:p-16">
