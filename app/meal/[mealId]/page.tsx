@@ -44,7 +44,7 @@ const MealPage = () => {
                     </div>
                     <div className="flex flex-col justify-between">
                         <div>
-                            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">{meal.strMeal}</h1>
+                            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">{meal.strMeal}</h1>
                             <div className="flex gap-3 mb-6">
                                 <span className="bg-red-500/20 text-red-500 px-4 py-2 rounded-full text-sm font-semibold border border-red-500/30">{meal.strCategory}</span>
                                 <span className="bg-red-500/20 text-red-500 px-4 py-2 rounded-full text-sm font-semibold border border-red-500/30">{meal.strArea}</span>
