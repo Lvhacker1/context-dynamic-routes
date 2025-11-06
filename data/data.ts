@@ -2,8 +2,8 @@ import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginForm
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
-    {href: '/categories', label: 'CA'},
-    {href: '/profile', label: 'PR'}
+    {href: '/categories', label: 'Category'},
+    {href: '/profile', label: 'Profile'}
 ]
 
 export const navbarConfig: NavbarConfig = {
