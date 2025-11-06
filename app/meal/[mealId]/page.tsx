@@ -50,8 +50,9 @@ const MealPage = () => {
                                 <span className="bg-red-500/20 text-red-500 px-4 py-2 rounded-full text-sm font-semibold border border-red-500/30">{meal.strArea}</span>
                             </div>
                         </div>
-                        <button onClick={() => saved ? removeSavedMeals(mealId) : addSavedMeals(mealId)} className={saved ? "bg-transparent border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md shadow-red-500/20" : "bg-red-500 border-2 border-red-500 text-white hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 font-semibold py-3 px-6 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300"}>
-                            {saved ? mealPageContent.deleteButton : mealPageContent.saveButton}
+                        <button onClick={() => saved ? removeSavedMeals(mealId) : addSavedMeals(mealId)} className={saved ? "bg-transparent border-2 border-red-500 text-red-500 hover:bg-red-500 hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md shadow-red-500/20 flex items-center justify-center gap-2" : "bg-red-500 border-2 border-red-500 text-white hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 font-semibold py-3 px-6 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 flex items-center justify-center gap-2"}>
+                            <span className="text-2xl">{saved ? '★' : '☆'}</span>
+                            <span>{saved ? mealPageContent.deleteButton : mealPageContent.saveButton}</span>
                         </button>
                     </div>
                     <div className="bg-zinc-900/50 backdrop-blur-sm p-6 rounded-2xl border border-zinc-800 shadow-xl">
