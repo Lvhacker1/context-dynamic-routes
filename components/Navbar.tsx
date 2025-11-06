@@ -13,16 +13,16 @@ const Navbar = () => {
     if (!user) return null;
 
     return (
-        <nav className="text-white shadow-lg px-2 sm:px-4">
-            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center py-3 sm:py-4 gap-2">
-                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-6 text-center">
-                    <h1>
+        <nav className="bg-zinc-900/80 backdrop-blur-md text-white shadow-xl shadow-black/50 border-b border-zinc-800 px-4 sm:px-6 sticky top-0 z-50">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:justify-between sm:items-center py-4 sm:py-5 gap-3">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-8 text-center">
+                    <h1 className="text-xl sm:text-2xl font-bold text-red-500">
                         {navbarConfig.title}
                     </h1>
-                    <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
                         {navlinksData.map(link => (
                             <Link
-                            className={` ${pathname === link.href ? 'text-blue-700' : 'hover:font-bold'}`}
+                            className={`font-semibold transition-all duration-300 ${pathname === link.href ? 'text-red-500 border-b-2 border-red-500 pb-1' : 'text-gray-300 hover:text-red-400'}`}
                             href={link.href}
                             key={link.href}>
                                 {link.label}
@@ -30,12 +30,12 @@ const Navbar = () => {
                         ))}
                     </div>
                 </div>
-                <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2 sm:gap-4">
+                <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
                     <div className="flex items-center gap-4">
-                        <span>
+                        <span className="text-gray-300 text-sm sm:text-base">
                             {navbarConfig.welcomeText}
                         </span>
-                        <button onClick={logout} className="px-2 py-1 bg-orange-800 hover:bg-orange-900 rounded-sm transition-colors">
+                        <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40">
                             {navbarConfig.logoutButton}
                         </button>
                     </div>
