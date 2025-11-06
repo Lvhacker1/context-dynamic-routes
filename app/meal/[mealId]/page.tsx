@@ -38,8 +38,8 @@ const MealPage = () => {
             <Navbar />
             <main className="max-w-7xl mx-auto px-4 py-8 lg:px-8">
                 <button onClick={() => router.back()} className="text-red-500 hover:text-red-400 font-semibold mb-6 transition-colors duration-300 flex items-center gap-2">← {mealPageContent.backButton}</button>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="relative h-64 sm:h-80 lg:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-red-500/10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden shadow-2xl shadow-red-500/10">
                         <Image src={meal.strMealThumb} alt={meal.strMeal} fill className="object-cover" />
                     </div>
                     <div className="flex flex-col justify-between">
