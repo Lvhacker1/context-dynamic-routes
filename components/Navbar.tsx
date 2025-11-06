@@ -31,10 +31,10 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
-                    <div className="flex items-center gap-4">
-                        <span className="text-gray-300 text-sm sm:text-base">
-                            {navbarConfig.welcomeText}
-                        </span>
+                    <div className="flex items-center gap-3">
+                        <Link href="/profile" className="bg-zinc-800/50 hover:bg-zinc-700 text-white text-xl px-3 py-2 rounded-lg transition-all duration-300 border border-zinc-700 hover:border-red-500/50">
+                            {navbarConfig.accountIcon}
+                        </Link>
                         <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40">
                             {navbarConfig.logoutButton}
                         </button>

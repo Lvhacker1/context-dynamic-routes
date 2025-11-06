@@ -5,7 +5,7 @@ export interface NavLinks {
 
 export interface NavbarConfig {
     title: string;
-    welcomeText: string;
+    accountIcon: string;
     logoutButton: string;
 }
 
