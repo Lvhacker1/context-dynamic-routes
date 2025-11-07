@@ -7,7 +7,7 @@ export const users: Users[] = [
         email: 'lavasha2@hotmail.com',
         password: 'blabla',
         savedMeals: [],
-        favoriteCategory: null,
+        favoriteCategories: [],
     },
     {
         id: '2',
@@ -15,7 +15,7 @@ export const users: Users[] = [
         email: 'mariam@hotmail.com',
         password: 'blabla2',
         savedMeals: [],
-        favoriteCategory: null,
+        favoriteCategories: [],
     },
     {
         id: '3',
@@ -23,6 +23,6 @@ export const users: Users[] = [
         email: 'rob@hotmail.com',
         password: 'blabla3',
         savedMeals: [],
-        favoriteCategory: null,
+        favoriteCategories: [],
     },
 ]

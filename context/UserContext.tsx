@@ -1,6 +1,7 @@
 'use client'
 import { Users } from "@/types/types";
-import { createContext, ReactNode, useContext, useState } from "react";
+import { users } from "@/lib/users";
+import { createContext, ReactNode, useContext, useEffect, useState } from "react";
 
 interface UserContextType {
     user: Users | null;
@@ -17,7 +18,29 @@ const UserContext = createContext <UserContextType | undefined> (undefined);
 export function UserProvider({children}: {children: ReactNode}) {
     const [user, setUser] =useState<Users | null>(null);
 
-    const login = (userData: Users) => setUser(userData)
+    useEffect(() => {
+        const savedUser = localStorage.getItem('currentUser');
+        if (savedUser) {
+            setUser(JSON.parse(savedUser));
+        }
+    }, []);
+
+    useEffect(() => {
+        if (user) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            const allUsers = JSON.parse(localStorage.getItem('allUsers') || JSON.stringify(users));
+            const updatedUsers = allUsers.map((u: Users) => u.id === user.id ? user : u);
+            localStorage.setItem('allUsers', JSON.stringify(updatedUsers));
+        } else {
+            localStorage.removeItem('currentUser');
+        }
+    }, [user]);
+
+    const login = (userData: Users) => {
+        const allUsers = JSON.parse(localStorage.getItem('allUsers') || JSON.stringify(users));
+        const savedUserData = allUsers.find((u: Users) => u.id === userData.id);
+        setUser(savedUserData || userData);
+    }
     const logout = () => setUser(null)
 
     const addSavedMeals = (mealId: string) => {
