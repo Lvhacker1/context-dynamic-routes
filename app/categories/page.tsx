@@ -17,7 +17,6 @@ const CategoriesPage = () => {
     const [showFullDescription, setShowFullDescription] = useState<{[key: string]: boolean}>({});
     const containerRef = useRef<HTMLDivElement>(null);
 
-
     useEffect(() => {
         getCategories().then(data => {
             setCategories(data); 

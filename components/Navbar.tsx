@@ -1,11 +1,9 @@
 'use client'
 import Link from "next/link"
 import { navbarConfig, navlinksData } from "@/data/data"
-import { NavLinks } from "@/types/types"
 import { useUser } from "@/context/UserContext"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
-
 
 const Navbar = () => {
     const {user, logout} = useUser()

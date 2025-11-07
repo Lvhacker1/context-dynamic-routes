@@ -10,7 +10,6 @@ import { useParams } from "next/navigation"
 import { useEffect, useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 
-
 const CategoryPage = () => {
     const params = useParams();
     const categoryName = params.categoryName as string;
@@ -20,9 +19,7 @@ const CategoryPage = () => {
 
     useEffect(() => {
         const cat = categoryName.charAt(0).toUpperCase() + categoryName.slice(1);
-        getMealsByCategory(cat).then(data => {
-            console.log("Fetched meals:", data);
-            setMeals(data); setLoading(false);})
+        getMealsByCategory(cat).then(data => {setMeals(data); setLoading(false);})
     }, [categoryName])
 
     if (!user) return null;

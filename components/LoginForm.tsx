@@ -2,9 +2,7 @@
 import { useUser } from "@/context/UserContext"
 import { loginFormData } from "@/data/data";
 import { users } from "@/lib/users";
-import Image from "next/image";
 import { FormEvent, useState } from "react";
-
 
 const LoginForm = () => {
     const {login} = useUser();
@@ -18,7 +16,6 @@ const LoginForm = () => {
         if (foundUser) login(foundUser);
         else setError(loginFormData.errorMessage)
     }
-
 
     return (
         <div className="flex flex-col justify-center items-center"

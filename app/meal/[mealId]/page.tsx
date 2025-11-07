@@ -9,7 +9,6 @@ import { notFound } from "next/navigation";
 import { useParams, useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
 
-
 const MealPage = () => {
     const params = useParams();
     const router = useRouter();
