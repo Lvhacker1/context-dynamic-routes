@@ -8,7 +8,8 @@ import Link from "next/link";
 import { PiHandWaving } from "react-icons/pi";
 
 export default function Home() {
-  const {user} = useUser();
+  const {user, isLoading} = useUser();
+  if (isLoading) return null;
   if (!user) return <LoginForm />
 
   return (

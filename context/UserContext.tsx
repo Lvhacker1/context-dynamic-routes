@@ -11,18 +11,21 @@ interface UserContextType {
     removeSavedMeals: (mealId: string) => void;
     setFavoriteCategory: (category: string) => void;
     isMealSaved: (mealId: string) => boolean;
+    isLoading: boolean;
 }
 
 const UserContext = createContext <UserContextType | undefined> (undefined);
 
 export function UserProvider({children}: {children: ReactNode}) {
     const [user, setUser] =useState<Users | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const savedUser = localStorage.getItem('currentUser');
         if (savedUser) {
             setUser(JSON.parse(savedUser));
         }
+        setIsLoading(false);
     }, []);
 
     useEffect(() => {
@@ -71,7 +74,7 @@ export function UserProvider({children}: {children: ReactNode}) {
     const isMealSaved = (mealId: string) => user?.savedMeals.includes(mealId) || false;
 
     return (
-        <UserContext.Provider value={{user, login, logout, addSavedMeals, removeSavedMeals, setFavoriteCategory, isMealSaved }}>
+        <UserContext.Provider value={{user, login, logout, addSavedMeals, removeSavedMeals, setFavoriteCategory, isMealSaved, isLoading }}>
             {children}
         </UserContext.Provider>
     )
