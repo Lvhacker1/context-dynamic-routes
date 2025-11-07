@@ -18,7 +18,7 @@ export const loginFormData: LoginFormTypes = {
     email: 'Email Adress:',
     password: 'Password:',
     submitButton: 'SIGN IN',
-    errorMessage: 'blablabla',
+    errorMessage: 'Invalid email or password. Please try again.',
     exampleAccountTitle: 'Example Account',
     signUpText: "Don't have an account?",
     signUpLink: 'Sign up here!'
