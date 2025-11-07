@@ -107,7 +107,7 @@ export interface MealPageContent {
 
 export interface NotFoundPageContent {
     title: string;
-    subtitle: string;
+    errorCode: string;
     description: string;
     backButton: string;
 }

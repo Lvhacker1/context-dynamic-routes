@@ -5,8 +5,8 @@ const NotFound = () => {
     return (
         <div className="bg-black min-h-screen flex flex-col items-center justify-center text-white px-4">
             <div className="text-center">
-                <h1 className="text-9xl font-bold text-red-500 mb-4">{notFoundPageContent.title}</h1>
-                <h2 className="text-3xl sm:text-4xl font-semibold mb-6">{notFoundPageContent.subtitle}</h2>
+                <h1 className="text-3xl sm:text-4xl font-semibold mb-6">{notFoundPageContent.title}</h1>
+                <h2 className="text-9xl font-bold text-red-500 mb-4">{notFoundPageContent.errorCode}</h2>
                 <p className="text-gray-400 text-lg mb-8 max-w-md">
                     {notFoundPageContent.description}
                 </p>

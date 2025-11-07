@@ -76,8 +76,8 @@ export const mealPageContent: MealPageContent = {
 }
 
 export const notFoundPageContent: NotFoundPageContent = {
-    title: '404',
-    subtitle: 'Page Not Found',
+    title: 'Page Not Found',
+    errorCode: '404',
     description: "Oops! The page you're looking for doesn't exist.",
     backButton: 'Back to Home'
-}
+} 
