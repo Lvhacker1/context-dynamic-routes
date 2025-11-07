@@ -41,8 +41,7 @@ export const homePageContent: HomePageContent = {
 
 export const profilePageContent: ProfilePageContent = {
     profileInfo: {
-        savedRecipes: 'saved blbal',
-        favoriteCategory: 'fav cat'
+        savedRecipes: 'saved blbal'
     },
     sections: {
         mySavedRecipes: 'my sav rec',

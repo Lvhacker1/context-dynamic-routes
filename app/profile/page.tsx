@@ -36,18 +36,11 @@ const ProfilePage = () => {
                         <div className="flex-1 text-center sm:text-left">
                             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{user.name}</h2>
                             <p className="text-gray-400 mb-3">{user.email}</p>
-                            {user.favoriteCategories && user.favoriteCategories.length > 0 && (
-                                <p className="text-red-500 font-semibold">{profilePageContent.profileInfo.favoriteCategory} {user.favoriteCategories[0]}</p>
-                            )}
                         </div>
                         <div className="flex gap-4 sm:gap-6">
                             <div className="text-center bg-zinc-800/50 px-4 py-3 rounded-lg border border-zinc-700">
                                 <p className="text-2xl sm:text-3xl font-bold text-red-500">{user.savedMeals.length}</p>
                                 <p className="text-xs sm:text-sm text-gray-400 mt-1">{profilePageContent.profileInfo.savedRecipes}</p>
-                            </div>
-                            <div className="text-center bg-zinc-800/50 px-4 py-3 rounded-lg border border-zinc-700">
-                                <p className="text-2xl sm:text-3xl font-bold text-red-500">{user.favoriteCategories?.length || 0}</p>
-                                <p className="text-xs sm:text-sm text-gray-400 mt-1">{profilePageContent.profileInfo.favoriteCategory}</p>
                             </div>
                         </div>
                     </div>

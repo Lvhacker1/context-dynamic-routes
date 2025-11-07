@@ -72,7 +72,6 @@ export interface HomePageContent {
 export interface ProfilePageContent {
     profileInfo: {
         savedRecipes: string;
-        favoriteCategory: string;
     },
     sections: {
         mySavedRecipes: string;
