@@ -3,14 +3,20 @@ import Link from "next/link"
 import { navbarConfig, navlinksData } from "@/data/data"
 import { NavLinks } from "@/types/types"
 import { useUser } from "@/context/UserContext"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react"
 
 
 const Navbar = () => {
     const {user, logout} = useUser()
     const pathname = usePathname()
+    const router = useRouter()
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+    const handleLogout = () => {
+        logout()
+        router.push('/')
+    }
 
     if (!user) return null;
 
@@ -49,7 +55,7 @@ const Navbar = () => {
                                 <Link href="/profile" className="bg-zinc-800/50 hover:bg-zinc-700 text-white text-xl px-3 py-2 rounded-lg transition-all duration-300 border border-zinc-700 hover:border-red-500/50">
                                     {navbarConfig.accountIcon}
                                 </Link>
-                                <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40">
+                                <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40">
                                     {navbarConfig.logoutButton}
                                 </button>
                             </div>
@@ -75,7 +81,7 @@ const Navbar = () => {
                             <Link href="/profile" onClick={() => setIsMenuOpen(false)} className="bg-zinc-800/50 text-white text-lg px-3 py-2 rounded-lg transition-all duration-300 border border-zinc-700">
                                 {navbarConfig.accountIcon}
                             </Link>
-                            <button onClick={logout} className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 flex-1">
+                            <button onClick={handleLogout} className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all duration-300 shadow-lg shadow-red-500/30 flex-1">
                                 {navbarConfig.logoutButton}
                             </button>
                         </div>
