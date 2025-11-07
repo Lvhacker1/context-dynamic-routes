@@ -31,7 +31,7 @@ export default function Home() {
         </div>
         <div className="sm:w-1/2">
           <Image
-            src="/kl11.png"
+            src="/food-image.png"
             alt="food image"
             width={800}
             height={800}

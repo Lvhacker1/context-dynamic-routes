@@ -20,7 +20,7 @@ const LoginForm = () => {
     return (
         <div className="flex flex-col justify-center items-center"
         style={{
-            backgroundImage: 'url(/food55.png)',
+            backgroundImage: 'url(/ingredients-background.png)',
             minHeight: '100vh',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
