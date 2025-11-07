@@ -4,7 +4,7 @@ export interface NavLinks {
 }
 
 export interface NavbarConfig {
-    title: string;
+    logo: string;
     accountIcon: string;
     logoutButton: string;
 }

@@ -23,9 +23,9 @@ const Navbar = () => {
             <nav className="bg-zinc-900/80 backdrop-blur-md text-white shadow-xl shadow-black/50 border-b border-zinc-800 px-4 sm:px-6 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="flex sm:hidden items-center justify-between py-3">
-                        <div className="text-lg font-bold text-red-500">
-                            {navbarConfig.title}
-                        </div>
+                        <Link href="/" className="text-lg font-bold text-red-500 hover:text-red-400 transition-colors duration-300">
+                            {navbarConfig.logo}
+                        </Link>
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className="text-white text-2xl focus:outline-none z-[60] relative">
@@ -34,9 +34,9 @@ const Navbar = () => {
                     </div>
                     <div className="hidden sm:flex sm:flex-row sm:justify-between sm:items-center py-4 sm:py-5 gap-3">
                         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-8 text-center">
-                            <div className="text-xl sm:text-2xl font-bold text-red-500">
-                                {navbarConfig.title}
-                            </div>
+                            <Link href="/" className="text-xl sm:text-2xl font-bold text-red-500 hover:text-red-400 transition-colors duration-300">
+                                {navbarConfig.logo}
+                            </Link>
                             <div className="flex flex-wrap justify-center gap-3 sm:gap-6">
                                 {navlinksData.map(link => (
                                     <Link

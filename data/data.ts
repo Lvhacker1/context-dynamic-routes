@@ -7,7 +7,7 @@ export const navlinksData: NavLinks[] = [
 ]
 
 export const navbarConfig: NavbarConfig = {
-    title: 'MEALDB',
+    logo: 'MEALDB',
     accountIcon: '👤',
     logoutButton: 'Log Out'
 }
