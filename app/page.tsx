@@ -21,7 +21,7 @@ export default function Home() {
           <p className="text-lg mb-8 mt-2 sm:mb-12 lg:text-xl text-gray-300">{homePageContent.subTitle}</p>
           <div className="flex flex-wrap gap-2 md:gap-4">
             {homePageContent.links.map((link, index) => (
-              <Link className={index === 0 ? "bg-red-500 border-2 border-red-500 text-white hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 text-base md:text-lg" : "bg-transparent border-2 border-red-500 text-red-500 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 font-semibold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-md shadow-red-500/20 transition-all duration-300 text-base md:text-lg"}
+              <Link className={index === 0 ? "bg-red-500 border-2 border-red-500 text-white hover:shadow-2xl hover:shadow-red-500/50 hover:scale-105 font-semibold px-4 py-2 rounded-lg shadow-lg shadow-red-500/30 transition-all duration-300 text-base md:text-lg" : "bg-transparent border-2 border-red-500 text-red-500 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 font-semibold px-4 py-2 rounded-lg shadow-md shadow-red-500/20 transition-all duration-300 text-base md:text-lg"}
               key={link.href}
               href={link.href}>
                 <p>{link.description}</p>
