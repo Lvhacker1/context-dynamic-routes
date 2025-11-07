@@ -17,7 +17,6 @@ export const getMealsByCategory = async (category: string): Promise<MealPreview[
     try {
         const response = await fetch(`${API_URL_BASE}/filter.php?c=${category}`);
         const data = await response.json();
-        console.log("API response:", data);
         return data.meals || [];
     } catch (error) {
         console.error('Error:', error)
