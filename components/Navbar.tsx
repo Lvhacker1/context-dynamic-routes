@@ -28,7 +28,6 @@ const Navbar = () => {
                             {isMenuOpen ? '✕' : '☰'}
                         </button>
                     </div>
-
                     <div className="hidden sm:flex sm:flex-row sm:justify-between sm:items-center py-4 sm:py-5 gap-3">
                         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-8 text-center">
                             <div className="text-xl sm:text-2xl font-bold text-red-500">
@@ -58,10 +57,9 @@ const Navbar = () => {
                     </div>
                 </div>
             </nav>
-
             {isMenuOpen && (
-                <div className="fixed top-0 left-0 right-0 bottom-0 bg-zinc-900/95 backdrop-blur-md z-40 sm:hidden">
-                    <div className="pt-20 px-4 pb-4 space-y-3">
+                <div className="fixed top-0 left-0 right-0 bottom-0 bg-zinc-900/95 backdrop-blur-md z-40 sm:hidden animate-[fadeIn_0.3s_ease-in-out_forwards]">
+                    <div className="pt-20 px-4 pb-4 space-y-3 animate-[slideDown_0.3s_ease-in-out_forwards]">
                         <div className="flex flex-col gap-3">
                             {navlinksData.map(link => (
                                 <Link
