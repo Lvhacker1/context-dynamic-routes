@@ -41,13 +41,13 @@ export const homePageContent: HomePageContent = {
 
 export const profilePageContent: ProfilePageContent = {
     profileInfo: {
-        savedRecipes: 'saved blbal'
+        savedRecipes: 'Saved Recipes'
     },
     sections: {
-        mySavedRecipes: 'my sav rec',
-        loading: 'loading...',
-        noSaved: 'no saved yet',
-        exploreRecipes: 'explore blabla'
+        mySavedRecipes: 'My Saved Recipes',
+        loading: 'Loading...',
+        noSaved: 'No saved recipes yet',
+        exploreRecipes: 'Explore Recipes'
     }
 }
 
