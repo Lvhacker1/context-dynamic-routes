@@ -28,6 +28,7 @@ const ProfilePage = () => {
         <div className="bg-black min-h-screen">
             <Navbar />
             <main className="max-w-7xl mx-auto px-4 py-8 lg:px-8">
+                <h1 className="sr-only">{profilePageContent.pageTitle}</h1>
                 <div className="bg-zinc-900/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-xl mb-8">
                     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                         <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center text-white text-3xl sm:text-4xl font-bold shadow-lg shadow-red-500/30">

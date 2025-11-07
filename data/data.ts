@@ -40,6 +40,7 @@ export const homePageContent: HomePageContent = {
 }
 
 export const profilePageContent: ProfilePageContent = {
+    pageTitle: 'My Saved Recipes',
     profileInfo: {
         savedRecipes: 'Saved Recipes'
     },

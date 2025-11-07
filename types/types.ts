@@ -70,6 +70,7 @@ export interface HomePageContent {
 }
 
 export interface ProfilePageContent {
+    pageTitle: string;
     profileInfo: {
         savedRecipes: string;
     },
