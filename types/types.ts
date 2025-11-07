@@ -104,3 +104,10 @@ export interface MealPageContent {
     instructionsTitle: string;
     youtubeLink: string;
 }
+
+export interface NotFoundPageContent {
+    title: string;
+    subtitle: string;
+    description: string;
+    backButton: string;
+}

@@ -1,4 +1,4 @@
-import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginFormTypes, MealPageContent, NavbarConfig, NavLinks, ProfilePageContent } from "@/types/types";
+import {  CategoriesPageContent, CategoryPageContent, HomePageContent, LoginFormTypes, MealPageContent, NavbarConfig, NavLinks, NotFoundPageContent, ProfilePageContent } from "@/types/types";
 
 export const navlinksData: NavLinks[] = [
     {href: '/', label: 'Home'},
@@ -73,4 +73,11 @@ export const mealPageContent: MealPageContent = {
     ingredientsTitle:'Ingredients',
     instructionsTitle: 'Instructions',
     youtubeLink: 'Watch On Youtube'
+}
+
+export const notFoundPageContent: NotFoundPageContent = {
+    title: '404',
+    subtitle: 'Page Not Found',
+    description: "Oops! The page you're looking for doesn't exist.",
+    backButton: 'Back to Home'
 }

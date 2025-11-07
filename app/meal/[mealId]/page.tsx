@@ -5,6 +5,7 @@ import { mealPageContent } from "@/data/data";
 import { getMealsById } from "@/lib/api";
 import { Meal } from "@/types/types";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { useParams, useRouter } from "next/navigation"
 import { useEffect, useState } from "react";
 
@@ -24,7 +25,7 @@ const MealPage = () => {
 
     if (!user) return null;
     if (loading) return <div className="bg-black min-h-screen"><Navbar /> <p className="text-white text-center pt-20">{mealPageContent.loadingMessage}</p></div>
-    if (!meal) return <div className="bg-black min-h-screen"><Navbar /> <p className="text-white text-center pt-20">{mealPageContent.notFoundMessage}</p></div>
+    if (!meal) notFound();
 
     const ingredients= [];
     for (let i = 1; i <= 20; i++) {
